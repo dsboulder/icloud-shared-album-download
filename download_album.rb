@@ -58,7 +58,7 @@ until urls_seen.include?(current_url) or c >= 200 or exit_early do
 			tmp_path = "/tmp/img.#{ext}"
 			File.write(tmp_path, r.body)
 			puts "    Wrote file of length #{r.body.length} to #{tmp_path}"	
-			cmd = "convert #{tmp_path} -resize 1500x1500\\> #{path}"
+			cmd = "convert #{tmp_path} -resize 1800x1800\\> #{path}"
 			puts "    Running #{cmd}..."
 			system cmd 
 			puts "    Resized to #{File.stat(path).size} bytes in final location #{path}" 
